@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ShoppingCart from './components/ShoppingCart';
+import ShoppingCart from './components/shoppingCart';
 import ProductList from './components/productList';
 
 class App extends Component {
@@ -16,8 +16,8 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <ShoppingCart />
         <ProductList />
+        <ShoppingCart />
       </div>
     );
   }

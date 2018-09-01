@@ -9,7 +9,10 @@ const PrductList = ({ products, addToCart }) => (
         <p>
           {product.title} || ${product.price} || {product.inventory}
         </p>
-        <button className="btn btn-dark" onClick={() => addToCart(product)}>
+        <button
+          className="btn btn-dark mb-2"
+          onClick={() => addToCart(product)}
+        >
           Add To Cart
         </button>
       </li>
