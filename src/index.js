@@ -4,7 +4,7 @@ import './index.css';
 import './styles/main.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import { creatStore } from 'redux';
+import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import products from './products.json';
 
@@ -26,7 +26,7 @@ const store = createStore(
 );
 
 ReactDOM.render(
-  <Provider>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')
