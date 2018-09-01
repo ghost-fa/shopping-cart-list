@@ -1,14 +1,14 @@
 export const addToCart = product => ({
-  type: 'ADDTOCART',
+  type: 'ADD_TO_CART',
   product
 });
 
 export const removeItem = product => ({
-  type: 'REMOVEITEM',
+  type: 'REMOVE_ITEM',
   product
 });
 export const removeAllItem = product => ({
-  type: 'REMOVEALLITEM',
+  type: 'REMOVE_ALL_ITEM',
   product
 });
 export const checkOut = () => ({
