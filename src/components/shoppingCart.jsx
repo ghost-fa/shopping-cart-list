@@ -4,6 +4,7 @@ import { removeItem, removeAllItem, checkOut } from '../modules/actions';
 
 const ShoppingCart = ({ carts, removeItem, removeAllItem, checkOut }) => (
   <div>
+    <hr />
     <ul>
       {carts.map(cart => (
         <li key={cart.id}>
