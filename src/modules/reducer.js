@@ -29,9 +29,34 @@ export const appReducer = (state = {}, action) => {
         }
       };
     case 'REMOVE_ITEM':
+      let newCart = { ...cart };
+      delete newCart[id];
+      return {
+        cart:
+          quantity > 1
+            ? {
+                ...cart,
+                [id]: {
+                  ...product,
+                  quantity: quantity - 1
+                }
+              }
+            : newCart,
+        products: {
+          ...products,
+          [id]: {
+            ...products[id],
+            inventory: products[id].inventory + 1
+          }
+        }
+      };
 
     case 'REMOVE_ALL_ITEM':
     case 'CHECKOUT':
+      return {
+        ...state,
+        cart: {}
+      };
       break;
 
       break;
