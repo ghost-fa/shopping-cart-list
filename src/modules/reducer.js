@@ -2,6 +2,8 @@ export const appReducer = (state = {}, action) => {
   const { products, cart } = state;
   const { product } = action;
   const { id, title, price } = product || {};
+  const cartItem = cart[id] || { product, quantity: 0 };
+  const quantity = cartItem.quantity;
 
   switch (action.type) {
     case 'ADD_TO_CART':
@@ -13,6 +15,15 @@ export const appReducer = (state = {}, action) => {
           [id]: {
             ...product,
             inventory: inventory - 1
+          }
+        },
+        cart: {
+          ...cart,
+          [id]: {
+            id,
+            title,
+            price,
+            quantity: quantity + 1
           }
         }
       };
