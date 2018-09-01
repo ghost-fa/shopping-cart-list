@@ -2,12 +2,13 @@ export const appReducer = (state = {}, action) => {
   const { products, cart } = state;
   const { product } = action;
   const { id, title, price } = product || {};
-  const cartItem = cart[id] || { product, quantity: 0 };
+  const cartItem = cart[id] || { ...product, quantity: 0 };
   const quantity = cartItem.quantity;
 
   switch (action.type) {
     case 'ADD_TO_CART':
       const inventory = product.inventory;
+      if (inventory <= 0) return state;
       return {
         ...state,
         products: {
@@ -28,6 +29,7 @@ export const appReducer = (state = {}, action) => {
         }
       };
     case 'REMOVE_ITEM':
+
     case 'REMOVE_ALL_ITEM':
     case 'CHECKOUT':
       break;
