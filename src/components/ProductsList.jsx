@@ -2,17 +2,22 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from '../modules/actions';
 
-const ProductsList = ({ products }) => (
+const ProductsList = ({ products, addToCart }) => (
   <ul>
     {products.map(product => (
       <li key={product.id}>
-        {product.id} || {product.title} || {product.price}
+        <p>
+          {product.id} || {product.title} || {product.price}
+        </p>
+        <button className="btn btn-dark" onClick={() => addToCart(product)}>
+          ADD TO CART
+        </button>
       </li>
     ))}
   </ul>
 );
 
-const mapStoreProps = ({ products }) => ({
+const mapStoreToProps = ({ products }) => ({
   products: Object.values(products)
 });
 
@@ -21,6 +26,6 @@ const mapActionsProps = {
 };
 
 export default connect(
-  mapStoreProps,
+  mapStoreToProps,
   mapActionsProps
 )(ProductsList);
