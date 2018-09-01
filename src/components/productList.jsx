@@ -7,7 +7,7 @@ const PrductList = ({ products, addToCart }) => (
     {products.map(product => (
       <li key={product.id}>
         <p>
-          {product.title} || ${product.price} || {product.inventory}
+          {product.title} || ${product.price} || X{product.inventory}
         </p>
         <button
           className="btn btn-dark mb-2"

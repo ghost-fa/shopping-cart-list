@@ -50,19 +50,23 @@ export const appReducer = (state = {}, action) => {
           }
         }
       };
-
     case 'REMOVE_ALL_ITEM':
+      return {
+        products: {
+          ...products,
+          [id]: {
+            ...products[id],
+            inventory: products[id].inventory + quantity
+          }
+        },
+        cart: newCart ? quantity : {}
+      };
     case 'CHECKOUT':
       return {
         ...state,
         cart: {}
       };
-      break;
 
-      break;
-
-      break;
-      break;
     default:
       return state;
   }

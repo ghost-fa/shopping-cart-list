@@ -10,6 +10,7 @@ const ShoppingCart = ({ carts, removeItem, removeAllItem, checkOut }) => (
           <p>
             {cart.title} || ${cart.price} || X{cart.quantity}
           </p>
+
           <button
             className="btn btn-dark mr-2"
             onClick={() => removeItem(cart)}
