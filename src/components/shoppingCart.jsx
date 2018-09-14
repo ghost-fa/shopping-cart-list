@@ -14,16 +14,10 @@ const ShoppingCart = ({ carts, removeItem, removeAllItem, checkOut }) => (
 
           <button
             className="btn btn-dark mr-2"
-            onClick={() => removeItem(cart)}
-          >
-            Remove One
-          </button>
+            onClick={() => removeItem(cart)}>Remove One</button>
           <button
             className="btn btn-dark mr-2"
-            onClick={() => removeAllItem(cart)}
-          >
-            Remove All
-          </button>
+            onClick={() => removeAllItem(cart)}> Remove All</button>
         </li>
       ))}
 
@@ -45,9 +39,9 @@ const mapStoreProps = ({ cart }) => ({
   carts: Object.values(cart)
 });
 const mapActionsProps = {
+  checkOut: checkOut,
   removeItem: removeItem,
-  removeAllItem: removeAllItem,
-  checkOut: checkOut
+  removeAllItem: removeAllItem
 };
 
 export default connect(
