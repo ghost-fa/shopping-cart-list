@@ -12,9 +12,9 @@ const PrductList = ({ products, addToCart }) => (
         <button
           className="btn btn-dark mb-2"
           onClick={() => addToCart(product)}
-          disabled={item.inventory > 0 ? 'Add To Cart' : 'Sold Out'}
+          disabled={product.inventory > 0 ? '' : 'disabled'}
         >
-          Add To Cart
+          {product.inventory > 0 ? 'Add To Cart' : 'Sold Out'}
         </button>
       </li>
     ))}
