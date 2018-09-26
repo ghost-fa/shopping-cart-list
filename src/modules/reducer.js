@@ -51,15 +51,18 @@ export const appReducer = (state = {}, action) => {
         }
       };
   case 'REMOVE_ALL_ITEM':
-    return {
-  products: {
-    ...products,
-    [id]: {
-      ...products[id],
-      inventory: products[id].inventory + quantity
-    }
-  },
-  cart: newCart ? quantity : {}
+  newCart = {...cart};
+  delete newCart[id]
+ return {
+   ...state,
+products: {
+ ...products,
+ [id]: {
+   ...products[id],
+   inventory: products[id].inventory + quantity
+ }
+},
+cart: newCart
 };
 
     case 'CHECKOUT':
