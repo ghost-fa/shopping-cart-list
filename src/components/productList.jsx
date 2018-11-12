@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { addToCart } from '../modules/actions';
 
 const PrductList = ({ products, addToCart }) => (
-  <ul>
+  <ul className="product">
     {products.map(product => (
       <li key={product.id}>
-        <p>
+        <p className="mt-2">
           {product.title} || ${product.price} || X{product.inventory}
         </p>
         <button

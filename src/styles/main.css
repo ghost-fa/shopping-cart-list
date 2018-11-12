@@ -6314,3 +6314,10 @@ a.text-dark:hover, a.text-dark:focus {
 
 ul li {
   list-style-type: none; }
+
+body {
+  background: rgba(85, 78, 43, 0.75);
+  margin: auto; }
+
+.product {
+  margin-top: 80px; }
